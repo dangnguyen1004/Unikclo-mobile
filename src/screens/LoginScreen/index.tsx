@@ -13,6 +13,8 @@ import {onLogin} from '../../redux/auth/auth.actions';
 import {RootState} from '../../redux/rootReducer';
 import {useAppDispatch} from '../../redux/store';
 import {AuthStackScreenProps} from '../../routes/AuthStack';
+import {ScreenTitle} from '../../components';
+import { space } from '../../constants/space';
 
 const LoginScreen: FC<AuthStackScreenProps<'Login'>> = props => {
   const {loading} = useSelector((state: RootState) => state.auth);
@@ -29,8 +31,10 @@ const LoginScreen: FC<AuthStackScreenProps<'Login'>> = props => {
     <ScrollView
       style={{
         backgroundColor: colors.background,
+        paddingHorizontal: space.appMargin
       }}>
       <View style={styles.container}>
+        <ScreenTitle text="Login" />
         <Text style={styles.title}>Login Screen</Text>
         <TextInput
           editable={!loading}
