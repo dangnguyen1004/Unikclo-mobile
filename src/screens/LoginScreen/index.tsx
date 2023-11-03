@@ -1,24 +1,14 @@
 import React, {FC} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {useSelector} from 'react-redux';
 import {ScreenTitle, Space, TextInput} from '../../components';
 import {colors} from '../../constants/colors';
 import {space} from '../../constants/space';
-import {onLogin} from '../../redux/auth/auth.actions';
-import {RootState} from '../../redux/rootReducer';
-import {useAppDispatch} from '../../redux/store';
 import {AuthStackScreenProps} from '../../routes/AuthStack';
+import ForgotPasswordButton from './components/ForgotPasswordButton';
+import {useLogin} from './controllers/login';
 
 const LoginScreen: FC<AuthStackScreenProps<'Login'>> = props => {
-  const {loading} = useSelector((state: RootState) => state.auth);
-  const dispatch = useAppDispatch();
-
-  const [email, setEmail] = React.useState('kminchelle');
-  const [password, setPassword] = React.useState('0lelplR');
-
-  const handleLogin = () => {
-    dispatch(onLogin({username: email, password}));
-  };
+  const loginController = useLogin();
 
   return (
     <ScrollView
@@ -31,11 +21,18 @@ const LoginScreen: FC<AuthStackScreenProps<'Login'>> = props => {
 
         <Space height={100} />
 
-        <TextInput label="Email" onChangeText={setEmail} />
+        <TextInput label="Email" onChangeText={loginController.setEmail} />
 
         <Space height={4} />
 
-        <TextInput label="Password" onChangeText={setPassword} />
+        <TextInput
+          label="Password"
+          onChangeText={loginController.setPassword}
+        />
+
+        <Space height={8} />
+
+        <ForgotPasswordButton />
       </View>
     </ScrollView>
   );
