@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface VStreamReactNativeTemplateTests : XCTestCase
+@interface UnikcloTests : XCTestCase
 
 @end
 
-@implementation VStreamReactNativeTemplateTests
+@implementation UnikcloTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
