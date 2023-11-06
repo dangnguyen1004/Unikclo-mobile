@@ -84,4 +84,7 @@ export const colors = {
 
   // Primary
   primary: '#DB3022',
+
+  // Success
+  success: '#2AA952'
 };
