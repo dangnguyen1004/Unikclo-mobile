@@ -81,4 +81,7 @@ export const colors = {
    *
    */
   errorBackground: palette.angry100,
+
+  // Primary
+  primary: '#DB3022',
 };

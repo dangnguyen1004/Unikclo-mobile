@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {ScreenTitle, Space, TextInput} from '../../components';
+import {Button, ScreenTitle, Space, TextInput} from '../../components';
 import {colors} from '../../constants/colors';
 import {space} from '../../constants/space';
 import {AuthStackScreenProps} from '../../routes/AuthStack';
@@ -33,6 +33,10 @@ const LoginScreen: FC<AuthStackScreenProps<'Login'>> = props => {
         <Space height={8} />
 
         <ForgotPasswordButton />
+
+        <Space height={20} />
+        
+        <Button label='Login' />
       </View>
     </ScrollView>
   );
