@@ -1,5 +1,5 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React, {FC} from 'react';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {colors, shadows} from '../../constants';
 
 interface Props {
@@ -11,9 +11,9 @@ const Button: FC<Props> = props => {
   const {label, preset = 'FullFilled'} = props;
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <Text style={styles.text}>{label}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
