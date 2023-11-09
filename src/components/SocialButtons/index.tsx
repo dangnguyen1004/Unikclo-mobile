@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import {StyleSheet, View} from 'react-native';
-import FaceBookLogo from '../../../../assets/icons/svg/FaceBookLogo.svg';
-import GoogleLogo from '../../../../assets/icons/svg/GoogleLogo.svg';
-import {SocialButton, Space} from '../../../../components';
+import FaceBookLogo from '../../assets/icons/svg/FaceBookLogo.svg';
+import GoogleLogo from '../../assets/icons/svg/GoogleLogo.svg';
+import {SocialButton, Space} from '..';
 
 interface Props {
   onPressGoogle?: () => void;

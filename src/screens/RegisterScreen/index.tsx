@@ -2,25 +2,20 @@ import React, {FC} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {
   Button,
-  ScreenBackButton,
   ScreenTitle,
   SocialButtons,
   Space,
   TextInput,
 } from '../../components';
-import {colors} from '../../constants/colors';
-import {space} from '../../constants/space';
+import {colors, space} from '../../constants';
 import {AuthStackScreenProps} from '../../routes/AuthStack';
-import ForgotPasswordButton from './components/ForgotPasswordButton';
-import {useLogin} from './controllers/login';
+import GoLoginButton from './components/GoLoginButton';
 
-const LoginScreen: FC<AuthStackScreenProps<'Login'>> = props => {
+const RegisterScreen: FC<AuthStackScreenProps<'Register'>> = props => {
   const {navigation} = props;
 
-  const loginController = useLogin();
-
-  const handleBack = () => {
-    navigation.canGoBack() && navigation.goBack();
+  const handleGoLogin = () => {
+    navigation.navigate('Login');
   };
 
   return (
@@ -30,29 +25,27 @@ const LoginScreen: FC<AuthStackScreenProps<'Login'>> = props => {
         paddingHorizontal: space.appMargin,
       }}>
       <View style={styles.container}>
-        <ScreenBackButton onPress={handleBack} />
-
-        <ScreenTitle text="Login" />
+        <ScreenTitle text="Sign Up" />
 
         <Space height={100} />
 
-        <TextInput label="Email" onChangeText={loginController.setEmail} />
+        <TextInput label="Name" />
 
         <Space height={4} />
 
-        <TextInput
-          label="Password"
-          onChangeText={loginController.setPassword}
-          secureTextEntry
-        />
+        <TextInput label="Email" />
+
+        <Space height={4} />
+
+        <TextInput label="Password" secureTextEntry />
 
         <Space height={8} />
 
-        <ForgotPasswordButton />
+        <GoLoginButton onPress={handleGoLogin} />
 
         <Space height={20} />
 
-        <Button label="Login" />
+        <Button label="Sign Up" />
 
         <Space height={100} />
 
@@ -64,7 +57,7 @@ const LoginScreen: FC<AuthStackScreenProps<'Login'>> = props => {
   );
 };
 
-export default LoginScreen;
+export default RegisterScreen;
 
 const styles = StyleSheet.create({
   container: {

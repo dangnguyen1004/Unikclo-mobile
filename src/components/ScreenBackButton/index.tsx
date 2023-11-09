@@ -1,6 +1,6 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {FC} from 'react';
-import LeftChevronIcon from '../../assets/icons/svg/LeftChevronIcon.svg';
+import { LeftChevronIcon } from '../../constants';
 
 interface Props {
   onPress?: () => void;

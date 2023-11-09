@@ -4,11 +4,12 @@ import {
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
 import {colors} from '../constants/colors';
-import {LoginScreen} from '../screens';
+import {LoginScreen, RegisterScreen} from '../screens';
 import {RootStackParamList, RootStackScreenProps} from './RootStack';
 
 export type AuthStackParamList = {
   Login: undefined;
+  Register: undefined;
 };
 
 export type AuthStackScreenProps<Screen extends keyof AuthStackParamList> =
@@ -26,8 +27,9 @@ export const AuthStack = () => {
         headerShown: false,
         navigationBarColor: colors.background,
       }}
-      initialRouteName="Login">
+      initialRouteName="Register">
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} />
     </Stack.Navigator>
   );
 };

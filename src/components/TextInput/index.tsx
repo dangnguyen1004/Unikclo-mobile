@@ -1,16 +1,16 @@
 import React, {FC} from 'react';
 import {StyleSheet} from 'react-native';
-import {TextInput as PaperTextInput} from 'react-native-paper';
+import {TextInput as PaperTextInput, TextInputProps} from 'react-native-paper';
 import {colors, shadows} from '../../constants';
 
-interface Props {
+interface Props extends TextInputProps {
   label?: string;
   valid?: boolean;
   onChangeText?: (text: string) => void;
 }
 
 const TextInput: FC<Props> = props => {
-  const {label, valid = false, onChangeText} = props;
+  const {label, valid = false, onChangeText, ...textInputProps} = props;
 
   return (
     <PaperTextInput
@@ -26,6 +26,7 @@ const TextInput: FC<Props> = props => {
       theme={{
         roundness: 4,
       }}
+      {...textInputProps}
     />
   );
 };
