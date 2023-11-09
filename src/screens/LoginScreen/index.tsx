@@ -1,6 +1,12 @@
 import React, {FC} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {Button, ScreenTitle, Space, TextInput} from '../../components';
+import {
+  Button,
+  ScreenBackButton,
+  ScreenTitle,
+  Space,
+  TextInput,
+} from '../../components';
 import {colors} from '../../constants/colors';
 import {space} from '../../constants/space';
 import {AuthStackScreenProps} from '../../routes/AuthStack';
@@ -9,7 +15,13 @@ import SocialButtons from './components/SocialButtons';
 import {useLogin} from './controllers/login';
 
 const LoginScreen: FC<AuthStackScreenProps<'Login'>> = props => {
+  const {navigation} = props;
+
   const loginController = useLogin();
+
+  const handleBack = () => {
+    navigation.canGoBack() && navigation.goBack();
+  };
 
   return (
     <ScrollView
@@ -18,6 +30,8 @@ const LoginScreen: FC<AuthStackScreenProps<'Login'>> = props => {
         paddingHorizontal: space.appMargin,
       }}>
       <View style={styles.container}>
+        <ScreenBackButton onPress={handleBack} />
+
         <ScreenTitle text="Login" />
 
         <Space height={100} />
