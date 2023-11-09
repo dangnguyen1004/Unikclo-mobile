@@ -4,3 +4,4 @@ export {default as Space} from './Space';
 export {default as TextButton} from './TextButton';
 export {default as Button} from './Button';
 export {default as SocialButton} from './SocialButton';
+export {default as ScreenBackButton} from './ScreenBackButton'
