@@ -4,6 +4,7 @@ import {
   NavigationContainer,
   createNavigationContainerRef,
 } from '@react-navigation/native';
+import React from 'react';
 import {useColorScheme} from 'react-native';
 import {RootStack, RootStackParamList} from './RootStack';
 

@@ -9,13 +9,13 @@ import {useAppDispatch} from '../../redux/store';
 import {onGetAllTodos, onUpdateTodo} from '../../redux/todo/todo.actions';
 import {AppStackScreenProps} from '../../routes/AppStack';
 
-const HomeScreen: FC<AppStackScreenProps<'Home'>> = props => {
+const HomeScreen: FC<AppStackScreenProps<'Home'>> = _props => {
   const {todos, loading} = useSelector((state: RootState) => state.todo);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(onGetAllTodos({}));
-  }, []);
+  }, [dispatch]);
 
   const sortedList = useMemo(() => {
     const doneList = todos.filter(todo => todo.completed);

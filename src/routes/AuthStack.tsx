@@ -3,6 +3,7 @@ import {
   NativeStackScreenProps,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
+import React from 'react';
 import {colors} from '../constants/colors';
 import {LoginScreen, RegisterScreen} from '../screens';
 import {RootStackParamList, RootStackScreenProps} from './RootStack';

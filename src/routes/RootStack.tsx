@@ -3,11 +3,12 @@ import {
   NativeStackScreenProps,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
+import React from 'react';
+import {useSelector} from 'react-redux';
 import {colors} from '../constants/colors';
+import {RootState} from '../redux/rootReducer';
 import {AppStack, AppStackParamList} from './AppStack';
 import {AuthStack, AuthStackParamList} from './AuthStack';
-import {useSelector} from 'react-redux';
-import {RootState} from '../redux/rootReducer';
 
 export type RootStackParamList = {
   Auth: NavigatorScreenParams<AuthStackParamList>;

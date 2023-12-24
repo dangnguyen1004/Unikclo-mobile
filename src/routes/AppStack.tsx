@@ -3,9 +3,10 @@ import {
   NativeStackScreenProps,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
+import React from 'react';
 import {colors} from '../constants/colors';
 import {HomeScreen} from '../screens';
-import { RootStackParamList, RootStackScreenProps } from './RootStack';
+import {RootStackParamList, RootStackScreenProps} from './RootStack';
 
 export type AppStackParamList = {
   Home: undefined;
